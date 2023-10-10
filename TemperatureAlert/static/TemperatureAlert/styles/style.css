@@ -1,0 +1,107 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Pixelify Sans', cursive;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header, footer, main{
+    width: 100vw;
+}
+
+header{
+    height: 5vh;
+}
+footer {
+    background-color: black;
+    color: white;
+    height: 5vh;
+}
+
+footer p {
+    text-align: center;
+}
+
+.welcome {
+    height: 90vh;
+    background-image: url("./../images/bg.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.welcome h1 {
+    background-color: black;
+    color: white;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+p {
+    font-size: small;
+    line-height: 40px;
+    text-transform: none;
+}
+
+form {
+    padding: 25px;
+    height: 90vh;
+}
+
+.home {
+    height: 90vh;
+    background-image: url("./../images/bg.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tempContainer {
+    width: 75vw;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.658);
+    color: wheat;
+    border-radius: 5vh;
+    padding: 35px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.alert-message {
+    font-size: 48px;
+    color: green;
+}
+
+.city {
+    font-size: 40px;
+    color: brown;
+}
+.limits, .temp-time{
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+    padding: 25px;
+    justify-content: space-around;
+}
+
+.temp-time {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.range {
+    width: 300px;
+    display: flex;
+}

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'TemperatureAlert/styles/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'TemperatureAlert/images/favicon.ico' %}" type="image/x-icon">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+
+    <!-- Title -->
+    <title>TempAlert</title>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="/">TemperatureAlert</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li {% if request.path == "/" %} class="active"{% endif %}><a href="/">Home</a></li>
+            </ul>
+            {% if not user.is_authenticated %}
+            <ul class="nav navbar-nav navbar-right">
+                <li {% if request.path == "/signup" %} class="active"{% endif %}><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li {% if request.path == "/login" %} class="active"{% endif %}><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+            {% else %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li {% if request.path == "/changeCity" %} class="active"{% endif %}><a href="/changeCity">Change My City</a></li>
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+                </ul>
+              {% endif %}
+            </div>
+        </nav> 
+    </header>
+    <main>
+        {% block body %}
+    
+        {% endblock %}
+    </main>
+    <footer>
+        <p>Designed with &hearts; by team HackDev</p>
+    </footer>
+</body>
+</html>

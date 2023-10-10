@@ -1,0 +1,27 @@
+{% extends "TemperatureAlert/layout.html" %}
+
+{% block body %}
+<h2>Change City</h2>
+
+{% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+{% endif %}
+<form action="{% url 'change_city' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="city">City</label>
+      <input autocomplete="off" type="text" class="form-control" id="city" name="city" placeholder="" value="{{ data.city }}">
+    </div>
+    <div class="form-group">
+      <label for="range">Temperature Range (in &deg;C )</label>
+      <div class="range" id="range">
+          <input type="number" step="any" min="-10" max="10" class="form-control" id="lower_temperature", name="lower_temperature" placeholder="" value="{{ data.lower_temperature }}">
+          <p> to </p>
+          <input type="number" step="any" min="25" max="45" class="form-control" id="upper_temperature", name="upper_temperature" placeholder="" value="{{ data.upper_temperature }}">
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+
+{% endblock %}

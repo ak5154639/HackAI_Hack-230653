@@ -1,0 +1,45 @@
+{% extends "TemperatureAlert/layout.html" %}
+
+{% block body %}
+
+<!-- If not authenticated -->
+{% if not user.is_authenticated %}
+
+<div class="welcome">
+    <h1>
+        Welcome <br>
+        <p>Please Sign in to set Temperature Alert</p>
+    </h1>
+</div>
+
+<!-- Else, if authenticated -->
+{% else %}
+<div class="home">
+    <div class="container tempContainer">
+        <div class="alert-message">
+            {% if data.lower_temperature > data.current_temperature %}
+                <font color="red">Temperature is lower than your lower limit.</font>
+            {% elif data.upper_temperature < data.current_temperature %}
+                <font color="red">Temperature is above your limit.</font>
+            {% else %}
+                Your temperature is between your limits
+            {% endif %}
+        </div>
+        <div class="city">
+            Your City is {{ data.city }}
+        </div>
+        <div class="limits">
+            <div class="lower-limit"> <strong>Lower Limit:</strong> {{data.lower_temperature}}&deg;C</div>
+            <div class="upper-limit"> <strong>Upper Limit:</strong> {{data.upper_temperature}}&deg;C</div>
+        </div>
+        <div class="temp-time">
+            <div class="current-temp"> <strong>Current Temperature:</strong> {{data.current_temperature}}&deg;C </div>
+            <div class="local-time"> <strong>Local Time:</strong> {{data.local_time}} </div>
+        </div>
+    </div>
+</div>
+
+
+{% endif %}
+
+{% endblock %}

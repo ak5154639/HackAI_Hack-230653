@@ -1,0 +1,40 @@
+{% extends "TemperatureAlert/layout.html" %}
+
+{% block body %}
+<h2>Register User</h2>
+
+{% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+{% endif %}
+<form action="{% url 'signup' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="userid">User ID</label>
+        <input type="text" class="form-control" id="userid" name="userid" aria-describedby="useridAvailability" placeholder="User ID">
+        <small id="useridAvailability" class="form-text text-muted">Start typing username to check tha availibility.</small>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Confirm Password">
+      </div>
+    <!-- <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> -->
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+
+{% endblock %}
