@@ -3,3 +3,4 @@ python-decouple
 uagents
 mailjet_rest
 cs50
+dj-database-url
