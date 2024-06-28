@@ -1,5 +1,5 @@
-Pipfile
-db.sqlite3
-.env
-Alert/__pycache__/*
-TemperatureAlert/__pycache__/*
+/Pipfile
+/db.sqlite3
+/.env
+/Alert/__pycache__/*
+/TemperatureAlert/__pycache__/*
