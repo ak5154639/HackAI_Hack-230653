@@ -4,7 +4,7 @@ import requests
 from decouple import config
 
 
-db = SQL("sqlite:///db.sqlite3")
+db = SQL(config('DATABASE_URL'))
 
 whether_agent = Agent(name="whether_agent", seed="whether_agent recovery phrase")
 
