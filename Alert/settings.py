@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-^&5vjo@2+)ip*%wi0o$d(!7b5zkkcb#!10ci!5fe71v@84!*23
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.89.38', '172.101.200.223', 'localhost']
+ALLOWED_HOSTS = ['192.168.89.38', '172.101.200.223', 'localhost', 'temperaturealert.onrender.com']
 
 
 # Application definition
