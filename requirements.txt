@@ -5,3 +5,4 @@ mailjet_rest
 cs50
 dj-database-url
 gunicorn
+psycopg2-binary
